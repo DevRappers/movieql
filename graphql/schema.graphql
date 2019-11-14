@@ -1,0 +1,5 @@
+type Query{
+    # !는 필수값이라는 것을 뜻함
+    # 사용자가 name을 요청하면 사용자에게 String을 보낼 것이라는 뜻임
+    name: String! 
+}
