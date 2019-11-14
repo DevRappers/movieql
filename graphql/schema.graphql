@@ -17,4 +17,5 @@ type Query{
 # Mutation이란 Database 상태가 변할 때 사용되는 것 
 type Mutation {
     addMovie(name: String!, score: Int!): Movie!
+    deleteMovie(id: Int!): Boolean!
 }
