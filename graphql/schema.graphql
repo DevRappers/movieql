@@ -1,16 +1,20 @@
 # 새로운 type을 정의해줄 수 있음
-type Person{
-    id : Int!
-    name : String!
-    age : Int!
-    gender : String!
+type Movie{
+    id: Int!
+    name: String!
+    score: Int!
 }
 
 type Query{
     # !는 필수값이라는 것을 뜻함
     # 사용자가 name을 요청하면 사용자에게 String을 보낼 것이라는 뜻임
     # type을 []로 감싸줄 경우 반환형이 배열이됨(array) 다수의 Person을 return함.
-    people: [Person]!
+    movies: [Movie]!
     # 한명의 값만 가지고 오고 싶을 경우 id로 불러옴 !을 안붙인것은 못찾는 경우가 있을수도 있기때문에
-    person(id: Int!): Person
+    movie(id: Int!): Movie
+}
+
+# Mutation이란 Database 상태가 변할 때 사용되는 것 
+type Mutation {
+    addMovie(name: String!, score: Int!): Movie!
 }
