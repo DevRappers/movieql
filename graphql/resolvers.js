@@ -5,7 +5,7 @@ import { getMovies } from "./db";
 const resolvers = {
     // 사용자가 쿼리로 name을 호출하면 DevRappers를 반환함.
     Query: {
-        movies: () => getMovies()
+        movies: (_, {rating, limit}) => getMovies(limit, rating)
     }
     // Mutation: {
     //     addMovie: (_, {name, score}) => addMovie(name, score),
